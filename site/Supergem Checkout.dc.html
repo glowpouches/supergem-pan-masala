@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Supergem Pay — Secure Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="ext-resource-dependency" content="assets/logo.png">
+  <meta name="ext-resource-dependency" content="assets/supergem.png">
+  <meta name="ext-resource-dependency" content="assets/supergem-premium.png">
+  <meta name="ext-resource-dependency" content="assets/siddu.png">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #f3ecd9; color: #1c2340; font-family: 'Noto Sans Kannada', Georgia, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #1e2f7a; text-decoration: none; }
+    a:hover { color: #b8912f; }
+    * { box-sizing: border-box; }
+    @keyframes sgspin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  </style>
+</helmet>
+
+<!-- ══════════ HEADER ══════════ -->
+<header style="background:#1e2f7a;display:flex;align-items:center;justify-content:space-between;padding:14px 48px">
+  <a href="Supergem Website (English).dc.html" style="display:flex;align-items:center;gap:14px">
+    <img src="assets/logo.png" alt="GM logo" style="height:40px;background:#fff;border-radius:8px;padding:4px">
+    <span style="display:flex;flex-direction:column;line-height:1.15">
+      <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:#fdf9ee">Supergem Pay</span>
+      <span style="font-size:11.5px;letter-spacing:0.14em;color:#d9b95c;font-family:'Noto Sans Kannada',sans-serif">SECURE CHECKOUT · SHIVAM INDUSTRIES</span>
+    </span>
+  </a>
+  <div style="display:flex;align-items:center;gap:16px">
+    <sc-if value="{{ testBanner }}" hint-placeholder-val="{{ true }}">
+      <span style="border:1.5px solid #d9b95c;color:#d9b95c;border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:0.12em;font-weight:700;font-family:'Noto Sans Kannada',sans-serif">TEST MODE</span>
+    </sc-if>
+    <span style="display:flex;align-items:center;gap:8px;color:#b9c2e6;font-size:13px;font-family:'Noto Sans Kannada',sans-serif">
+      <span style="width:8px;height:8px;border-radius:50%;background:#7ac48a"></span>
+      256-bit encrypted
+    </span>
+  </div>
+</header>
+
+<!-- ══════════ CHECKOUT ══════════ -->
+<sc-if value="{{ showPay }}" hint-placeholder-val="{{ true }}">
+<main data-screen-label="Checkout" style="max-width:1120px;margin:0 auto;padding:48px;display:grid;grid-template-columns:1.45fr 1fr;gap:28px;align-items:start">
+
+  <!-- Payment card -->
+  <div style="background:#fff;border-radius:18px;box-shadow:0 16px 44px rgba(30,47,122,0.12);overflow:hidden;display:grid;grid-template-columns:230px 1fr">
+
+    <!-- Method rail -->
+    <div style="background:#fdf9ee;border-right:1px solid #e4d9bd;padding:20px 14px;display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:12px;letter-spacing:0.18em;color:#9a9273;font-weight:600;padding:0 10px 6px;font-family:'Noto Sans Kannada',sans-serif">PAY USING</span>
+      <button onClick="{{ pickUpi }}" style="cursor:pointer;display:flex;align-items:center;gap:12px;width:100%;padding:13px 12px;border-radius:12px;border:1.5px solid {{ upiBorder }};background:{{ upiBg }};text-align:left;font-family:'Noto Sans Kannada',sans-serif">
+        <span style="width:36px;height:36px;border-radius:50%;background:#1e2f7a;color:#fdf9ee;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">UPI</span>
+        <span style="display:flex;flex-direction:column"><span style="font-size:14.5px;font-weight:700;color:#1e2f7a">UPI</span><span style="font-size:11.5px;color:#7a7358">GPay · PhonePe · QR</span></span>
+      </button>
+      <button onClick="{{ pickCard }}" style="cursor:pointer;display:flex;align-items:center;gap:12px;width:100%;padding:13px 12px;border-radius:12px;border:1.5px solid {{ cardBorder }};background:{{ cardBg }};text-align:left;font-family:'Noto Sans Kannada',sans-serif">
+        <span style="width:36px;height:36px;border-radius:50%;background:#b8912f;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">CD</span>
+        <span style="display:flex;flex-direction:column"><span style="font-size:14.5px;font-weight:700;color:#1e2f7a">Cards</span><span style="font-size:11.5px;color:#7a7358">Credit &amp; debit</span></span>
+      </button>
+      <button onClick="{{ pickBank }}" style="cursor:pointer;display:flex;align-items:center;gap:12px;width:100%;padding:13px 12px;border-radius:12px;border:1.5px solid {{ bankBorder }};background:{{ bankBg }};text-align:left;font-family:'Noto Sans Kannada',sans-serif">
+        <span style="width:36px;height:36px;border-radius:50%;background:#2a3d8f;color:#fdf9ee;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">NB</span>
+        <span style="display:flex;flex-direction:column"><span style="font-size:14.5px;font-weight:700;color:#1e2f7a">Net banking</span><span style="font-size:11.5px;color:#7a7358">All Indian banks</span></span>
+      </button>
+      <button onClick="{{ pickWallet }}" style="cursor:pointer;display:flex;align-items:center;gap:12px;width:100%;padding:13px 12px;border-radius:12px;border:1.5px solid {{ walletBorder }};background:{{ walletBg }};text-align:left;font-family:'Noto Sans Kannada',sans-serif">
+        <span style="width:36px;height:36px;border-radius:50%;background:#7a5c14;color:#fdf9ee;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0">WL</span>
+        <span style="display:flex;flex-direction:column"><span style="font-size:14.5px;font-weight:700;color:#1e2f7a">Wallets</span><span style="font-size:11.5px;color:#7a7358">Paytm &amp; more</span></span>
+      </button>
+    </div>
+
+    <!-- Method panel -->
+    <div style="padding:28px 30px;display:flex;flex-direction:column;gap:20px;min-height:460px">
+
+      <sc-if value="{{ isUpi }}" hint-placeholder-val="{{ true }}">
+        <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1e2f7a">Pay with UPI</h2>
+        <div style="display:flex;gap:24px;align-items:center">
+          <div style="border:1.5px solid #e4d9bd;border-radius:14px;padding:14px;background:#fdf9ee">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&amp;margin=6&amp;color=1e2f7a&amp;data={{ upiData }}" alt="UPI QR code" style="width:180px;height:180px;display:block">
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;flex:1">
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#4a5170">Scan with GPay, PhonePe, Paytm or any UPI app — or enter your UPI ID below.</p>
+            <input value="{{ vpa }}" onChange="{{ setVpa }}" placeholder="yourname@upi" style="background:#fdf9ee;border:1.5px solid #e4d9bd;border-radius:10px;padding:13px 15px;font-size:15px;font-family:'Noto Sans Kannada',sans-serif;color:#1c2340;width:100%">
+            <span style="font-size:12px;color:#9a9273">Paying to: shivamindustries@ybl</span>
+          </div>
+        </div>
+        <button onClick="{{ pay }}" style="cursor:pointer;margin-top:auto;background:#b8912f;color:#fff;border:none;border-radius:999px;padding:15px;font-size:16px;font-weight:700;font-family:'Noto Sans Kannada',sans-serif;width:100%" style-hover="background:#a07c22">Pay {{ grandLabel }} via UPI</button>
+      </sc-if>
+
+      <sc-if value="{{ isCard }}" hint-placeholder-val="{{ false }}">
+        <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1e2f7a">Pay with card</h2>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <input value="{{ cardNum }}" onChange="{{ setCardNum }}" placeholder="Card number" style="background:#fdf9ee;border:1.5px solid #e4d9bd;border-radius:10px;padding:13px 15px;font-size:15px;font-family:'Noto Sans Kannada',sans-serif;color:#1c2340;width:100%;letter-spacing:0.06em">
+          <input value="{{ cardName }}" onChange="{{ setCardName }}" placeholder="Name on card" style="background:#fdf9ee;border:1.5px solid #e4d9bd;border-radius:10px;padding:13px 15px;font-size:15px;font-family:'Noto Sans Kannada',sans-serif;color:#1c2340;width:100%">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <input value="{{ cardExp }}" onChange="{{ setCardExp }}" placeholder="MM / YY" style="background:#fdf9ee;border:1.5px solid #e4d9bd;border-radius:10px;padding:13px 15px;font-size:15px;font-family:'Noto Sans Kannada',sans-serif;color:#1c2340;width:100%">
+            <input value="{{ cardCvv }}" onChange="{{ setCardCvv }}" placeholder="CVV" type="password" style="background:#fdf9ee;border:1.5px solid #e4d9bd;border-radius:10px;padding:13px 15px;font-size:15px;font-family:'Noto Sans Kannada',sans-serif;color:#1c2340;width:100%">
+          </div>
+          <span style="font-size:12px;color:#9a9273">Visa · Mastercard · RuPay accepted. Card details are never stored.</span>
+        </div>
+        <button onClick="{{ pay }}" style="cursor:pointer;margin-top:auto;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:15px;font-size:16px;font-weight:700;font-family:'Noto Sans Kannada',sans-serif;width:100%" style-hover="background:#16225c">Pay {{ grandLabel }}</button>
+      </sc-if>
+
+      <sc-if value="{{ isBank }}" hint-placeholder-val="{{ false }}">
+        <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1e2f7a">Net banking</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+          <sc-for list="{{ banks }}" as="bank" hint-placeholder-count="6">
+            <button onClick="{{ bank.pick }}" style="cursor:pointer;border:1.5px solid {{ bank.border }};background:{{ bank.bg }};border-radius:12px;padding:14px 10px;font-size:13.5px;font-weight:600;color:#1e2f7a;font-family:'Noto Sans Kannada',sans-serif">{{ bank.name }}</button>
+          </sc-for>
+        </div>
+        <span style="font-size:12.5px;color:#9a9273">{{ bankHint }}</span>
+        <button onClick="{{ pay }}" style="cursor:pointer;margin-top:auto;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:15px;font-size:16px;font-weight:700;font-family:'Noto Sans Kannada',sans-serif;width:100%" style-hover="background:#16225c">Pay {{ grandLabel }} via net banking</button>
+      </sc-if>
+
+      <sc-if value="{{ isWallet }}" hint-placeholder-val="{{ false }}">
+        <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1e2f7a">Wallets</h2>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ wallets }}" as="w" hint-placeholder-count="4">
+            <button onClick="{{ w.pick }}" style="cursor:pointer;display:flex;align-items:center;gap:14px;border:1.5px solid {{ w.border }};background:{{ w.bg }};border-radius:12px;padding:14px 16px;text-align:left;font-family:'Noto Sans Kannada',sans-serif">
+              <span style="width:18px;height:18px;border-radius:50%;border:2px solid #b8912f;background:{{ w.dot }};flex-shrink:0"></span>
+              <span style="font-size:15px;font-weight:600;color:#1e2f7a">{{ w.name }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <button onClick="{{ pay }}" style="cursor:pointer;margin-top:auto;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:15px;font-size:16px;font-weight:700;font-family:'Noto Sans Kannada',sans-serif;width:100%" style-hover="background:#16225c">Pay {{ grandLabel }} via wallet</button>
+      </sc-if>
+
+    </div>
+  </div>
+
+  <!-- Order summary -->
+  <div style="background:#1e2f7a;border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:16px;box-shadow:0 16px 44px rgba(30,47,122,0.2)">
+    <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:#fdf9ee">Order summary</h3>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ items }}" as="item" hint-placeholder-count="2">
+        <div style="display:flex;align-items:center;gap:12px;background:#2a3d8f;border-radius:12px;padding:10px 14px">
+          <img src="{{ item.img }}" alt="{{ item.name }}" style="width:42px;border-radius:6px">
+          <div style="display:flex;flex-direction:column;flex:1">
+            <span style="font-weight:700;font-size:14px;color:#fdf9ee;font-family:'Noto Sans Kannada',sans-serif">{{ item.name }}</span>
+            <span style="font-size:12.5px;color:#b9c2e6;font-family:'Noto Sans Kannada',sans-serif">₹5 × {{ item.qty }}</span>
+          </div>
+          <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:#fdf9ee">₹{{ item.subtotal }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="height:1px;background:#3a4a9c"></div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-family:'Noto Sans Kannada',sans-serif;font-size:14px;color:#b9c2e6">
+      <div style="display:flex;justify-content:space-between"><span>Subtotal</span><span>₹{{ subtotal }}</span></div>
+      <div style="display:flex;justify-content:space-between"><span>Delivery</span><span style="color:#7ac48a">Free</span></div>
+      <sc-if value="{{ feeEnabled }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;justify-content:space-between"><span>Convenience fee</span><span>₹{{ fee }}</span></div>
+      </sc-if>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #3a4a9c;padding-top:14px">
+      <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:16px;font-weight:700;color:#fdf9ee">Total</span>
+      <span style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#d9b95c">{{ grandLabel }}</span>
+    </div>
+    <p style="margin:0;font-size:12px;color:#8f9aca;line-height:1.6;font-family:'Noto Sans Kannada',sans-serif">0% tobacco · 0% nicotine. Payment secured by Supergem Pay.</p>
+  </div>
+</main>
+</sc-if>
+
+<!-- ══════════ PROCESSING ══════════ -->
+<sc-if value="{{ showProcessing }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:100;background:rgba(20,31,82,0.72);display:flex;align-items:center;justify-content:center">
+    <div style="background:#fdf9ee;border-radius:18px;padding:40px 48px;display:flex;flex-direction:column;align-items:center;gap:18px">
+      <span style="width:48px;height:48px;border-radius:50%;border:4px solid #e4d9bd;border-top-color:#b8912f;animation:sgspin 0.9s linear infinite"></span>
+      <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:15.5px;font-weight:600;color:#1e2f7a">Contacting your bank…</span>
+      <span style="font-size:12.5px;color:#9a9273;font-family:'Noto Sans Kannada',sans-serif">Do not refresh or press back</span>
+    </div>
+  </div>
+</sc-if>
+
+<!-- ══════════ SUCCESS ══════════ -->
+<sc-if value="{{ showSuccess }}" hint-placeholder-val="{{ false }}">
+  <main data-screen-label="Payment Success" style="max-width:560px;margin:0 auto;padding:64px 48px">
+    <div style="background:#fff;border-radius:18px;box-shadow:0 16px 44px rgba(30,47,122,0.12);padding:44px 40px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center">
+      <span style="width:84px;height:84px;border-radius:50%;border:3px solid #b8912f;color:#b8912f;display:inline-flex;align-items:center;justify-content:center;font-size:40px;font-weight:700">✓</span>
+      <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1e2f7a">Payment successful</h2>
+      <span style="font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#b8912f">{{ grandLabel }}</span>
+      <div style="width:100%;background:#fdf9ee;border:1px solid #e4d9bd;border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:8px;font-family:'Noto Sans Kannada',sans-serif;font-size:14px;color:#4a5170">
+        <div style="display:flex;justify-content:space-between"><span>Order ID</span><span style="font-weight:700;color:#1e2f7a">{{ orderId }}</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Method</span><span style="font-weight:700;color:#1e2f7a">{{ methodLabel }}</span></div>
+        <div style="display:flex;justify-content:space-between"><span>Date</span><span style="font-weight:700;color:#1e2f7a">{{ payDate }}</span></div>
+      </div>
+      <a href="Supergem Website (English).dc.html" style="background:#b8912f;color:#fff;border-radius:999px;padding:14px 34px;font-family:'Noto Sans Kannada',sans-serif;font-weight:700;font-size:15.5px;width:100%" style-hover="background:#a07c22;color:#fff">Back to Supergem</a>
+      <span style="font-size:12px;color:#9a9273;font-family:'Noto Sans Kannada',sans-serif">Demo gateway — no real money was moved.</span>
+    </div>
+  </main>
+</sc-if>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer style="padding:24px 48px 40px;display:flex;justify-content:center;gap:24px;font-size:12.5px;color:#9a9273;font-family:'Noto Sans Kannada',sans-serif">
+  <span>© 2026 Shivam Industries · Supergem Pay (demo)</span>
+  <a href="Supergem Payments Dashboard.dc.html" style="color:#b8912f;font-weight:600">Merchant portal →</a>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1440}, &quot;testBanner&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Gateway&quot;}, &quot;convenienceFee&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Gateway&quot;}}">
+class Component extends DCLogic {
+  state = {
+    method: 'upi',
+    view: 'pay',
+    vpa: '', cardNum: '', cardName: '', cardExp: '', cardCvv: '',
+    bank: '', wallet: 'Paytm',
+    orderId: '', payDate: ''
+  };
+
+  getCart() {
+    const q = new URLSearchParams(window.location.search);
+    let s = parseInt(q.get('s')) || 0;
+    let p = parseInt(q.get('p')) || 0;
+    let d = parseInt(q.get('d')) || 0;
+    if (s + p + d === 0) { s = 2; p = 1; d = 1; } // sample order when opened directly
+    return { s, p, d };
+  }
+
+  pay() {
+    this.setState({ view: 'processing' });
+    setTimeout(() => {
+      this.setState({
+        view: 'success',
+        orderId: 'SG-' + Date.now().toString().slice(-8),
+        payDate: new Date().toLocaleString('en-IN', { day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit' })
+      });
+    }, 1800);
+  }
+
+  renderVals() {
+    const { method, view, vpa, cardNum, cardName, cardExp, cardCvv, bank, wallet, orderId, payDate } = this.state;
+    const cart = this.getCart();
+    const defs = [
+      { key: 's', name: 'Supergem', img: 'assets/supergem.png' },
+      { key: 'p', name: 'Supergem Premium', img: 'assets/supergem-premium.png' },
+      { key: 'd', name: 'Siddu', img: 'assets/siddu.png' },
+    ];
+    const items = defs.filter(x => cart[x.key] > 0).map(x => ({ ...x, qty: cart[x.key], subtotal: cart[x.key] * 5 }));
+    const subtotal = (cart.s + cart.p + cart.d) * 5;
+    const feeEnabled = this.props.convenienceFee ?? false;
+    const fee = 2;
+    const grand = subtotal + (feeEnabled ? fee : 0);
+    const grandLabel = '₹' + grand;
+
+    const tab = (m) => ({ border: method === m ? '#b8912f' : '#e4d9bd', bg: method === m ? '#fdf6e3' : '#fff' });
+    const bankNames = ['SBI', 'HDFC Bank', 'ICICI Bank', 'Axis Bank', 'Canara Bank', 'Karnataka Bank'];
+    const walletNames = ['Paytm', 'PhonePe Wallet', 'Amazon Pay', 'Mobikwik'];
+    const methodLabels = { upi: 'UPI', card: 'Card', bank: 'Net banking · ' + (bank || 'Bank'), wallet: 'Wallet · ' + wallet };
+
+    const fmtNum = v => v.replace(/\D/g, '').slice(0, 16).replace(/(\d{4})(?=\d)/g, '$1 ');
+    const fmtExp = v => { const d2 = v.replace(/\D/g, '').slice(0, 4); return d2.length > 2 ? d2.slice(0, 2) + ' / ' + d2.slice(2) : d2; };
+
+    return {
+      testBanner: this.props.testBanner ?? true,
+      showPay: view !== 'success',
+      showProcessing: view === 'processing',
+      showSuccess: view === 'success',
+      isUpi: method === 'upi', isCard: method === 'card', isBank: method === 'bank', isWallet: method === 'wallet',
+      upiBorder: tab('upi').border, upiBg: tab('upi').bg,
+      cardBorder: tab('card').border, cardBg: tab('card').bg,
+      bankBorder: tab('bank').border, bankBg: tab('bank').bg,
+      walletBorder: tab('wallet').border, walletBg: tab('wallet').bg,
+      pickUpi: () => this.setState({ method: 'upi' }),
+      pickCard: () => this.setState({ method: 'card' }),
+      pickBank: () => this.setState({ method: 'bank' }),
+      pickWallet: () => this.setState({ method: 'wallet' }),
+      items, subtotal, feeEnabled, fee, grandLabel,
+      upiData: encodeURIComponent('upi://pay?pa=shivamindustries@ybl&pn=Shivam Industries&am=' + grand + '&cu=INR'),
+      vpa, setVpa: e => this.setState({ vpa: e.target.value }),
+      cardNum, setCardNum: e => this.setState({ cardNum: fmtNum(e.target.value) }),
+      cardName, setCardName: e => this.setState({ cardName: e.target.value }),
+      cardExp, setCardExp: e => this.setState({ cardExp: fmtExp(e.target.value) }),
+      cardCvv, setCardCvv: e => this.setState({ cardCvv: e.target.value.replace(/\D/g, '').slice(0, 3) }),
+      banks: bankNames.map(name => ({
+        name,
+        border: bank === name ? '#b8912f' : '#e4d9bd',
+        bg: bank === name ? '#fdf6e3' : '#fdf9ee',
+        pick: () => this.setState({ bank: name })
+      })),
+      bankHint: bank ? 'You will be redirected to ' + bank + ' to complete the payment.' : 'Select your bank to continue.',
+      wallets: walletNames.map(name => ({
+        name,
+        border: wallet === name ? '#b8912f' : '#e4d9bd',
+        bg: wallet === name ? '#fdf6e3' : '#fdf9ee',
+        dot: wallet === name ? '#b8912f' : 'transparent',
+        pick: () => this.setState({ wallet: name })
+      })),
+      pay: () => this.pay(),
+      orderId, payDate,
+      methodLabel: methodLabels[method],
+    };
+  }
+}
+</script>
+</body>
+</html>

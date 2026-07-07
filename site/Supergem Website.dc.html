@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Supergem Pan Masala — Shivam Industries, Karnataka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Noto+Serif+Kannada:wght@500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #faf7f0; color: #1c2340; font-family: 'Source Serif 4', 'Noto Sans Kannada', Georgia, serif; -webkit-font-smoothing: antialiased; }
+    a { color: #1e2f7a; text-decoration: none; }
+    a:hover { color: #b8912f; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<!-- ══════════ TOP STRIP ══════════ -->
+<sc-if value="{{ showTopStrip }}" hint-placeholder-val="{{ true }}">
+<div style="background:#1e2f7a;color:#f5e9c8;font-size:13px;letter-spacing:0.08em;display:flex;justify-content:center;gap:28px;padding:8px 16px;font-family:'Noto Sans Kannada',sans-serif">
+  <span>✦ 0% TOBACCO · 0% NICOTINE</span>
+  <span style="opacity:0.5">|</span>
+  <span>ತಂಬಾಕು ಇಲ್ಲ · ನಿಕೋಟಿನ್ ಇಲ್ಲ</span>
+  <span style="opacity:0.5">|</span>
+  <span>SAFFRON BLENDED · ಕೇಸರಿ ಮಿಶ್ರಿತ</span>
+</div>
+</sc-if>
+
+<!-- ══════════ HEADER ══════════ -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(250,247,240,0.96);backdrop-filter:blur(8px);border-bottom:1px solid #e4d9bd;display:flex;align-items:center;justify-content:space-between;padding:14px 48px">
+  <a href="#top" style="display:flex;align-items:center;gap:14px">
+    <img src="assets/logo.png" alt="GM logo" style="height:44px;width:auto">
+    <span style="display:flex;flex-direction:column;line-height:1.1">
+      <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:#1e2f7a">Shivam Industries</span>
+      <span style="font-size:11.5px;letter-spacing:0.14em;color:#b8912f;font-family:'Noto Sans Kannada',sans-serif">ಶಿವಂ ಇಂಡಸ್ಟ್ರೀಸ್ · KARNATAKA</span>
+    </span>
+  </a>
+  <nav style="display:flex;align-items:center;gap:30px;font-family:'Noto Sans Kannada',sans-serif;font-size:15px;font-weight:500">
+    <a href="#products">Products · ಉತ್ಪನ್ನಗಳು</a>
+    <a href="#story">Our Story · ನಮ್ಮ ಕಥೆ</a>
+    <a href="#quality">Quality · ಗುಣಮಟ್ಟ</a>
+    <a href="#karnataka">Karnataka</a>
+    <a href="#contact">Contact · ಸಂಪರ್ಕ</a>
+    <button onClick="{{ toggleCart }}" style="cursor:pointer;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:10px 20px;font-family:'Noto Sans Kannada',sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px" style-hover="background:#16225c">
+      <span>Cart · ಬುಟ್ಟಿ</span>
+      <span style="background:#b8912f;color:#fff;border-radius:999px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12.5px;padding:0 6px">{{ cartCount }}</span>
+    </button>
+  </nav>
+</header>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="top" data-screen-label="Hero" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#faf7f0 0%,#f3ecd9 100%);padding:88px 48px 72px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;max-width:1400px;margin:0 auto">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="height:1px;width:48px;background:#b8912f"></span>
+      <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:14px;letter-spacing:0.22em;color:#b8912f;font-weight:600">SAFFRON BLENDED PAN MASALA</span>
+    </div>
+    <h1 style="margin:0;font-family:'Noto Serif Kannada','Playfair Display',serif;font-weight:700;font-size:56px;line-height:1.12;color:#1e2f7a">ರುಚಿಯ ರತ್ನ,<br>ಕರ್ನಾಟಕದ ಹೆಮ್ಮೆ.</h1>
+    <p style="margin:0;font-family:'Playfair Display',serif;font-size:26px;font-weight:500;color:#3a4370;line-height:1.35">The gem of taste, the pride of Karnataka.</p>
+    <p style="margin:0;max-width:520px;font-size:17px;line-height:1.7;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">Supergem, Supergem Premium and Siddu — saffron-blended pan masala crafted by Shivam Industries with zero tobacco and zero nicotine. ಕೇಸರಿ ಮಿಶ್ರಿತ, ಶುದ್ಧ ಮತ್ತು ಸುರಕ್ಷಿತ ಪಾನ್ ಮಸಾಲ — ಪ್ರತಿ ಪೌಚ್ ಕೇವಲ ₹5.</p>
+    <div style="display:flex;gap:16px;margin-top:8px">
+      <a href="#products" style="background:#b8912f;color:#fff;border-radius:999px;padding:14px 30px;font-family:'Noto Sans Kannada',sans-serif;font-weight:600;font-size:16px" style-hover="background:#a07c22;color:#fff">Shop Now · ಈಗ ಖರೀದಿಸಿ</a>
+      <a href="#story" style="border:1.5px solid #1e2f7a;color:#1e2f7a;border-radius:999px;padding:14px 30px;font-family:'Noto Sans Kannada',sans-serif;font-weight:600;font-size:16px" style-hover="background:#1e2f7a;color:#fff">Our Story · ನಮ್ಮ ಕಥೆ</a>
+    </div>
+    <div style="display:flex;gap:36px;margin-top:18px">
+      <div style="display:flex;flex-direction:column">
+        <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1e2f7a">₹5</span>
+        <span style="font-size:13px;color:#7a7358;font-family:'Noto Sans Kannada',sans-serif">Per pouch · ಪ್ರತಿ ಪೌಚ್</span>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1e2f7a">3</span>
+        <span style="font-size:13px;color:#7a7358;font-family:'Noto Sans Kannada',sans-serif">Brands · ಬ್ರಾಂಡ್‌ಗಳು</span>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1e2f7a">0%</span>
+        <span style="font-size:13px;color:#7a7358;font-family:'Noto Sans Kannada',sans-serif">Tobacco &amp; nicotine · ತಂಬಾಕು</span>
+      </div>
+    </div>
+  </div>
+  <div style="position:relative;display:flex;align-items:center;justify-content:center;min-height:440px">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+      <div style="width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#f0e3bd 0%,rgba(240,227,189,0) 70%)"></div>
+    </div>
+    <img src="assets/supergem-premium.png" alt="Supergem Premium pack" style="position:relative;width:270px;transform:rotate(-4deg);box-shadow:0 30px 60px rgba(30,47,122,0.22);border-radius:8px;z-index:3">
+    <img src="assets/supergem.png" alt="Supergem pack" style="position:absolute;width:200px;left:8%;top:16%;transform:rotate(-12deg);box-shadow:0 20px 44px rgba(30,47,122,0.18);border-radius:8px;z-index:2">
+    <img src="assets/siddu.png" alt="Siddu pack" style="position:absolute;width:200px;right:6%;bottom:8%;transform:rotate(9deg);box-shadow:0 20px 44px rgba(30,47,122,0.18);border-radius:8px;z-index:2">
+  </div>
+</section>
+
+<!-- ══════════ PRODUCTS / SHOP ══════════ -->
+<section id="products" data-screen-label="Products" style="background:#1e2f7a;padding:80px 48px">
+  <div style="max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:44px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+      <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:13px;letter-spacing:0.24em;color:#d9b95c;font-weight:600">OUR PRODUCTS · ನಮ್ಮ ಉತ್ಪನ್ನಗಳು</span>
+      <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fdf9ee">Three gems. One promise of purity.</h2>
+      <p style="margin:0;font-family:'Noto Sans Kannada',sans-serif;font-size:17px;color:#b9c2e6">ಮೂರು ರತ್ನಗಳು — ಶುದ್ಧತೆಯ ಒಂದೇ ಭರವಸೆ. Every pouch ₹5.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+
+      <!-- Supergem -->
+      <div style="background:#fdf9ee;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;align-items:center;gap:16px;box-shadow:0 16px 40px rgba(0,0,0,0.25)">
+        <div style="background:#f3ecd9;border-radius:12px;padding:20px;display:flex;justify-content:center;width:100%"><img src="assets/supergem.png" alt="Supergem" style="width:170px"></div>
+        <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">Supergem</h3>
+        <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#b8912f;font-weight:600">ಸೂಪರ್‌ಜೆಮ್ · ಕೇಸರಿ ಮಿಶ್ರಿತ</span>
+        <p style="margin:0;text-align:center;font-size:14.5px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">The everyday classic. Saffron-blended freshness with fine supari, catechu and cardamom. 0% tobacco, 0% nicotine.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto">
+          <span style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">₹5</span>
+          <div style="display:flex;align-items:center;gap:10px">
+            <button onClick="{{ subSupergem }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:1.5px solid #1e2f7a;background:transparent;color:#1e2f7a;font-size:17px;font-weight:700" style-hover="background:#1e2f7a;color:#fff">−</button>
+            <span style="min-width:20px;text-align:center;font-weight:700;font-size:17px">{{ qtySupergem }}</span>
+            <button onClick="{{ addSupergem }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:none;background:#b8912f;color:#fff;font-size:17px;font-weight:700" style-hover="background:#a07c22">+</button>
+          </div>
+        </div>
+        <button onClick="{{ addSupergem }}" style="cursor:pointer;width:100%;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:13px;font-family:'Noto Sans Kannada',sans-serif;font-size:15px;font-weight:600" style-hover="background:#16225c">Add to Cart · ಬುಟ್ಟಿಗೆ ಸೇರಿಸಿ</button>
+      </div>
+
+      <!-- Supergem Premium -->
+      <div style="background:#fdf9ee;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;align-items:center;gap:16px;box-shadow:0 16px 40px rgba(0,0,0,0.25);border:2px solid #d9b95c;position:relative">
+        <sc-if value="{{ premiumHighlight }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#b8912f;color:#fff;border-radius:999px;padding:5px 18px;font-size:12.5px;letter-spacing:0.12em;font-weight:700;font-family:'Noto Sans Kannada',sans-serif;white-space:nowrap">PREMIUM · ಪ್ರೀಮಿಯಂ</span></sc-if>
+        <div style="background:#f3ecd9;border-radius:12px;padding:20px;display:flex;justify-content:center;width:100%"><img src="assets/supergem-premium.png" alt="Supergem Premium" style="width:170px"></div>
+        <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">Supergem Premium</h3>
+        <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#b8912f;font-weight:600">ಸೂಪರ್‌ಜೆಮ್ ಪ್ರೀಮಿಯಂ</span>
+        <p style="margin:0;text-align:center;font-size:14.5px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">Our richest blend — extra saffron, select-grade supari and a royal gold-lattice pack. No tobacco, no nicotine added.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto">
+          <span style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">₹5</span>
+          <div style="display:flex;align-items:center;gap:10px">
+            <button onClick="{{ subPremium }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:1.5px solid #1e2f7a;background:transparent;color:#1e2f7a;font-size:17px;font-weight:700" style-hover="background:#1e2f7a;color:#fff">−</button>
+            <span style="min-width:20px;text-align:center;font-weight:700;font-size:17px">{{ qtyPremium }}</span>
+            <button onClick="{{ addPremium }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:none;background:#b8912f;color:#fff;font-size:17px;font-weight:700" style-hover="background:#a07c22">+</button>
+          </div>
+        </div>
+        <button onClick="{{ addPremium }}" style="cursor:pointer;width:100%;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:13px;font-family:'Noto Sans Kannada',sans-serif;font-size:15px;font-weight:600" style-hover="background:#16225c">Add to Cart · ಬುಟ್ಟಿಗೆ ಸೇರಿಸಿ</button>
+      </div>
+
+      <!-- Siddu -->
+      <div style="background:#fdf9ee;border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;align-items:center;gap:16px;box-shadow:0 16px 40px rgba(0,0,0,0.25)">
+        <div style="background:#f3ecd9;border-radius:12px;padding:20px;display:flex;justify-content:center;width:100%"><img src="assets/siddu.png" alt="Siddu" style="width:170px"></div>
+        <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">Siddu</h3>
+        <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#b8912f;font-weight:600">ಸಿದ್ದು · ನಮ್ಮ ನಾಡಿನ ಹೆಸರು</span>
+        <p style="margin:0;text-align:center;font-size:14.5px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">A name of our own soil. Bold, aromatic saffron-blended pan masala made for Karnataka's taste. 0% tobacco, 0% nicotine.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto">
+          <span style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">₹5</span>
+          <div style="display:flex;align-items:center;gap:10px">
+            <button onClick="{{ subSiddu }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:1.5px solid #1e2f7a;background:transparent;color:#1e2f7a;font-size:17px;font-weight:700" style-hover="background:#1e2f7a;color:#fff">−</button>
+            <span style="min-width:20px;text-align:center;font-weight:700;font-size:17px">{{ qtySiddu }}</span>
+            <button onClick="{{ addSiddu }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:none;background:#b8912f;color:#fff;font-size:17px;font-weight:700" style-hover="background:#a07c22">+</button>
+          </div>
+        </div>
+        <button onClick="{{ addSiddu }}" style="cursor:pointer;width:100%;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:13px;font-family:'Noto Sans Kannada',sans-serif;font-size:15px;font-weight:600" style-hover="background:#16225c">Add to Cart · ಬುಟ್ಟಿಗೆ ಸೇರಿಸಿ</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ STORY ══════════ -->
+<section id="story" data-screen-label="Our Story" style="padding:96px 48px;background:#faf7f0">
+  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center">
+    <div style="position:relative;display:flex;justify-content:center">
+      <div style="background:#1e2f7a;border-radius:16px;padding:48px 40px;display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;max-width:420px">
+        <img src="assets/logo.png" alt="GM logo" style="width:150px;background:#fff;border-radius:12px;padding:14px">
+        <span style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#fdf9ee;text-align:center">Shivam Industries</span>
+        <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#d9b95c;text-align:center">ಕರ್ನಾಟಕದ ಸ್ವಂತ ಪಾನ್ ಮಸಾಲ ತಯಾರಕರು</span>
+        <div style="height:1px;width:64px;background:#b8912f"></div>
+        <p style="margin:0;font-size:14px;color:#b9c2e6;text-align:center;line-height:1.7;font-family:'Noto Sans Kannada',sans-serif">Proudly made in Karnataka, for Karnataka.</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:13px;letter-spacing:0.24em;color:#b8912f;font-weight:600">OUR STORY · ನಮ್ಮ ಕಥೆ</span>
+      <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1e2f7a;line-height:1.2">From a small unit in Karnataka to every corner shop in the state.</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.75;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">Shivam Industries began with a simple belief — that Karnataka deserves a pan masala of its own: pure, saffron-blended, and completely free of tobacco and nicotine. Under the GM mark, we craft each batch with carefully selected supari, catechu, cardamom and real saffron.</p>
+      <p style="margin:0;font-size:16.5px;line-height:1.85;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">ಶಿವಂ ಇಂಡಸ್ಟ್ರೀಸ್ ಒಂದು ಸರಳ ನಂಬಿಕೆಯಿಂದ ಆರಂಭವಾಯಿತು — ಕರ್ನಾಟಕಕ್ಕೆ ತನ್ನದೇ ಆದ ಶುದ್ಧ, ಕೇಸರಿ ಮಿಶ್ರಿತ ಪಾನ್ ಮಸಾಲ ಬೇಕು. ಇಂದು ಸೂಪರ್‌ಜೆಮ್, ಸೂಪರ್‌ಜೆಮ್ ಪ್ರೀಮಿಯಂ ಮತ್ತು ಸಿದ್ದು ರಾಜ್ಯದ ಸಾವಿರಾರು ಅಂಗಡಿಗಳಲ್ಲಿ ಜನರ ಮೆಚ್ಚಿನ ಆಯ್ಕೆಯಾಗಿದೆ.</p>
+      <div style="display:flex;gap:14px;align-items:center;margin-top:6px">
+        <span style="height:1px;flex:1;background:#e4d9bd"></span>
+        <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:#b8912f">"ರುಚಿಯಲ್ಲಿ ರತ್ನ, ನಂಬಿಕೆಯಲ್ಲಿ ಬೆಟ್ಟ"</span>
+        <span style="height:1px;flex:1;background:#e4d9bd"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ QUALITY ══════════ -->
+<section id="quality" data-screen-label="Quality" style="padding:88px 48px;background:#f3ecd9">
+  <div style="max-width:1160px;margin:0 auto;display:flex;flex-direction:column;gap:44px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+      <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:13px;letter-spacing:0.24em;color:#b8912f;font-weight:600">QUALITY · ಗುಣಮಟ್ಟ</span>
+      <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1e2f7a">Why Karnataka trusts the GM mark</h2>
+      <p style="margin:0;font-family:'Noto Sans Kannada',sans-serif;font-size:17px;color:#7a7358">ಜಿಎಂ ಗುರುತನ್ನು ಕರ್ನಾಟಕ ಏಕೆ ನಂಬುತ್ತದೆ</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px">
+      <div style="background:#fdf9ee;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;border-top:3px solid #b8912f">
+        <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#b8912f">01</span>
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#1e2f7a;font-family:'Noto Sans Kannada',sans-serif">0% Tobacco, 0% Nicotine</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">Every pouch, every brand — completely free of tobacco and nicotine. ತಂಬಾಕು ಮತ್ತು ನಿಕೋಟಿನ್ ಸಂಪೂರ್ಣ ಮುಕ್ತ.</p>
+      </div>
+      <div style="background:#fdf9ee;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;border-top:3px solid #b8912f">
+        <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#b8912f">02</span>
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#1e2f7a;font-family:'Noto Sans Kannada',sans-serif">Real Saffron Blend</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">A signature kesar blend gives every chew its rich aroma. ನಿಜವಾದ ಕೇಸರಿ ಮಿಶ್ರಣದ ಸುಗಂಧ.</p>
+      </div>
+      <div style="background:#fdf9ee;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;border-top:3px solid #b8912f">
+        <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#b8912f">03</span>
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#1e2f7a;font-family:'Noto Sans Kannada',sans-serif">Select-Grade Supari</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">Hand-sorted betel nut, catechu and cardamom from trusted farms. ಆಯ್ದ ದರ್ಜೆಯ ಅಡಿಕೆ ಮತ್ತು ಏಲಕ್ಕಿ.</p>
+      </div>
+      <div style="background:#fdf9ee;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;border-top:3px solid #b8912f">
+        <span style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#b8912f">04</span>
+        <h3 style="margin:0;font-size:18px;font-weight:700;color:#1e2f7a;font-family:'Noto Sans Kannada',sans-serif">Hygienic Packing</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">Sealed fresh in food-grade pouches on automated lines. ಸ್ವಚ್ಛ, ಸುರಕ್ಷಿತ ಪ್ಯಾಕಿಂಗ್.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ KARNATAKA ══════════ -->
+<section id="karnataka" data-screen-label="Karnataka Presence" style="padding:88px 48px;background:#faf7f0">
+  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:13px;letter-spacing:0.24em;color:#b8912f;font-weight:600">ACROSS KARNATAKA · ಕರ್ನಾಟಕದಾದ್ಯಂತ</span>
+      <h2 style="margin:0;font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1e2f7a;line-height:1.2">From Bengaluru to Bidar, we're at your neighbourhood shop.</h2>
+      <p style="margin:0;font-size:16.5px;line-height:1.8;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">ಬೆಂಗಳೂರಿನಿಂದ ಬೀದರ್‌ವರೆಗೆ — ನಿಮ್ಮ ಹತ್ತಿರದ ಅಂಗಡಿಯಲ್ಲಿ ನಮ್ಮ ಉತ್ಪನ್ನಗಳು ಲಭ್ಯ. Our distribution network covers every district of Karnataka.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Bengaluru · ಬೆಂಗಳೂರು</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Mysuru · ಮೈಸೂರು</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Hubballi–Dharwad · ಹುಬ್ಬಳ್ಳಿ</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Belagavi · ಬೆಳಗಾವಿ</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Kalaburagi · ಕಲಬುರಗಿ</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Mangaluru · ಮಂಗಳೂರು</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Davangere · ದಾವಣಗೆರೆ</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Ballari · ಬಳ್ಳಾರಿ</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Shivamogga · ಶಿವಮೊಗ್ಗ</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Vijayapura · ವಿಜಯಪುರ</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">Tumakuru · ತುಮಕೂರು</span>
+        <span style="background:#fdf9ee;border:1px solid #e4d9bd;border-radius:999px;padding:9px 18px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif;color:#1e2f7a;font-weight:500">+ every district · ಎಲ್ಲಾ ಜಿಲ್ಲೆಗಳು</span>
+      </div>
+    </div>
+
+    <!-- Distributor enquiry -->
+    <div id="contact" style="background:#1e2f7a;border-radius:16px;padding:40px 36px;display:flex;flex-direction:column;gap:18px">
+      <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#fdf9ee">Become a Distributor</h3>
+      <p style="margin:0;font-size:14.5px;color:#b9c2e6;line-height:1.6;font-family:'Noto Sans Kannada',sans-serif">ವಿತರಕರಾಗಲು ಬಯಸುವಿರಾ? ನಿಮ್ಮ ವಿವರ ಕಳುಹಿಸಿ — ನಮ್ಮ ತಂಡ ಸಂಪರ್ಕಿಸುತ್ತದೆ.</p>
+      <sc-if value="{{ formDone }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#2a3d8f;border:1px solid #d9b95c;border-radius:12px;padding:22px;text-align:center;font-family:'Noto Sans Kannada',sans-serif;color:#fdf9ee;font-size:15.5px;line-height:1.7">ಧನ್ಯವಾದಗಳು! Thank you — our team will call you within 2 working days.</div>
+      </sc-if>
+      <sc-if value="{{ formNotDone }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <input value="{{ formName }}" onChange="{{ setFormName }}" placeholder="Your name · ನಿಮ್ಮ ಹೆಸರು" style="background:#fdf9ee;border:none;border-radius:10px;padding:14px 16px;font-size:15px;font-family:'Noto Sans Kannada',sans-serif;color:#1c2340;width:100%">
+          <input value="{{ formPhone }}" onChange="{{ setFormPhone }}" placeholder="Phone · ಫೋನ್ ಸಂಖ್ಯೆ" style="background:#fdf9ee;border:none;border-radius:10px;padding:14px 16px;font-size:15px;font-family:'Noto Sans Kannada',sans-serif;color:#1c2340;width:100%">
+          <input value="{{ formCity }}" onChange="{{ setFormCity }}" placeholder="City / district · ನಗರ / ಜಿಲ್ಲೆ" style="background:#fdf9ee;border:none;border-radius:10px;padding:14px 16px;font-size:15px;font-family:'Noto Sans Kannada',sans-serif;color:#1c2340;width:100%">
+          <button onClick="{{ submitForm }}" style="cursor:pointer;background:#b8912f;color:#fff;border:none;border-radius:999px;padding:14px;font-size:15.5px;font-weight:700;font-family:'Noto Sans Kannada',sans-serif" style-hover="background:#a07c22">Send Enquiry · ಕಳುಹಿಸಿ</button>
+        </div>
+      </sc-if>
+      <div style="height:1px;background:#3a4a9c"></div>
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:14px;color:#b9c2e6;font-family:'Noto Sans Kannada',sans-serif">
+        <span>✆ +91 XXXXX XXXXX</span>
+        <span>✉ care@shivamindustries.in</span>
+        <span>Shivam Industries, Karnataka, India</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer style="background:#141f52;color:#8f9aca;padding:48px;display:flex;flex-direction:column;gap:24px">
+  <div style="max-width:1160px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="assets/logo.png" alt="GM logo" style="height:36px;background:#fff;border-radius:8px;padding:4px">
+      <span style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fdf9ee">Shivam Industries</span>
+    </div>
+    <div style="display:flex;gap:24px;font-size:14px;font-family:'Noto Sans Kannada',sans-serif">
+      <a href="#products" style="color:#b9c2e6">Products</a>
+      <a href="#story" style="color:#b9c2e6">Our Story</a>
+      <a href="#quality" style="color:#b9c2e6">Quality</a>
+      <a href="#contact" style="color:#b9c2e6">Contact</a>
+    </div>
+  </div>
+  <div style="max-width:1160px;margin:0 auto;width:100%;border-top:1px solid #26346e;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;font-family:'Noto Sans Kannada',sans-serif">
+    <span>© 2026 Shivam Industries. All rights reserved. Supergem®, Siddu® are registered trademarks.</span>
+    <span>0% Tobacco · 0% Nicotine · ತಂಬಾಕು ಇಲ್ಲ · ನಿಕೋಟಿನ್ ಇಲ್ಲ</span>
+  </div>
+</footer>
+
+<!-- ══════════ CART DRAWER ══════════ -->
+<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:100">
+    <div onClick="{{ toggleCart }}" style="position:absolute;inset:0;background:rgba(20,31,82,0.55)"></div>
+    <div style="position:absolute;top:0;right:0;bottom:0;width:400px;max-width:90vw;background:#fdf9ee;box-shadow:-20px 0 60px rgba(0,0,0,0.3);display:flex;flex-direction:column;padding:28px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1e2f7a">Your Cart · ಬುಟ್ಟಿ</h3>
+        <button onClick="{{ toggleCart }}" style="cursor:pointer;background:none;border:none;font-size:24px;color:#1e2f7a">✕</button>
+      </div>
+      <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+        <p style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#7a7358;line-height:1.7">Your cart is empty. ನಿಮ್ಮ ಬುಟ್ಟಿ ಖಾಲಿಯಿದೆ — ಉತ್ಪನ್ನ ಸೇರಿಸಿ!</p>
+      </sc-if>
+      <div style="display:flex;flex-direction:column;gap:14px;flex:1;overflow:auto">
+        <sc-for list="{{ cartItems }}" as="item" hint-placeholder-count="0">
+          <div style="display:flex;align-items:center;gap:14px;background:#f3ecd9;border-radius:12px;padding:12px 16px">
+            <img src="{{ item.img }}" alt="{{ item.name }}" style="width:54px;border-radius:6px">
+            <div style="display:flex;flex-direction:column;flex:1">
+              <span style="font-weight:700;font-size:15px;color:#1e2f7a;font-family:'Noto Sans Kannada',sans-serif">{{ item.name }}</span>
+              <span style="font-size:13px;color:#7a7358;font-family:'Noto Sans Kannada',sans-serif">₹5 × {{ item.qty }}</span>
+            </div>
+            <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:#1e2f7a">₹{{ item.subtotal }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="border-top:1px solid #e4d9bd;padding-top:18px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;justify-content:space-between;font-family:'Noto Sans Kannada',sans-serif;font-size:16px;font-weight:700;color:#1e2340">
+          <span>Total · ಒಟ್ಟು</span>
+          <span style="font-family:'Playfair Display',serif;font-size:22px;color:#1e2f7a">₹{{ cartTotal }}</span>
+        </div>
+        <button onClick="{{ checkout }}" style="cursor:pointer;background:#b8912f;color:#fff;border:none;border-radius:999px;padding:15px;font-size:16px;font-weight:700;font-family:'Noto Sans Kannada',sans-serif" style-hover="background:#a07c22">Checkout · ಖರೀದಿಸಿ</button>
+        <p style="margin:0;font-size:12px;color:#9a9273;text-align:center;font-family:'Noto Sans Kannada',sans-serif">{{ checkoutMsg }}</p>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1440}, &quot;showTopStrip&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot;}, &quot;premiumHighlight&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = {
+    cart: { supergem: 0, premium: 0, siddu: 0 },
+    cartOpen: false,
+    formName: '', formPhone: '', formCity: '', formDone: false,
+    checkoutMsg: ''
+  };
+
+  add(key, d) {
+    this.setState(s => ({ cart: { ...s.cart, [key]: Math.max(0, s.cart[key] + d) } }));
+  }
+
+  renderVals() {
+    const { cart, cartOpen, formName, formPhone, formCity, formDone, checkoutMsg } = this.state;
+    const defs = [
+      { key: 'supergem', name: 'Supergem', img: 'assets/supergem.png' },
+      { key: 'premium', name: 'Supergem Premium', img: 'assets/supergem-premium.png' },
+      { key: 'siddu', name: 'Siddu', img: 'assets/siddu.png' },
+    ];
+    const cartItems = defs.filter(d => cart[d.key] > 0)
+      .map(d => ({ ...d, qty: cart[d.key], subtotal: cart[d.key] * 5 }));
+    const cartCount = cart.supergem + cart.premium + cart.siddu;
+    return {
+      showTopStrip: this.props.showTopStrip ?? true,
+      premiumHighlight: this.props.premiumHighlight ?? true,
+      cartCount,
+      cartOpen,
+      cartEmpty: cartCount === 0,
+      cartItems,
+      cartTotal: cartCount * 5,
+      qtySupergem: cart.supergem, qtyPremium: cart.premium, qtySiddu: cart.siddu,
+      addSupergem: () => this.add('supergem', 1),
+      subSupergem: () => this.add('supergem', -1),
+      addPremium: () => this.add('premium', 1),
+      subPremium: () => this.add('premium', -1),
+      addSiddu: () => this.add('siddu', 1),
+      subSiddu: () => this.add('siddu', -1),
+      toggleCart: () => this.setState(s => ({ cartOpen: !s.cartOpen, checkoutMsg: '' })),
+      checkout: () => this.setState({ checkoutMsg: 'Demo shop — orders are illustrative only. ಇದು ಪ್ರದರ್ಶನ ಮಾತ್ರ.' }),
+      checkoutMsg,
+      formName, formPhone, formCity,
+      formDone, formNotDone: !formDone,
+      setFormName: e => this.setState({ formName: e.target.value }),
+      setFormPhone: e => this.setState({ formPhone: e.target.value }),
+      setFormCity: e => this.setState({ formCity: e.target.value }),
+      submitForm: () => this.setState({ formDone: true }),
+    };
+  }
+}
+</script>
+</body>
+</html>
