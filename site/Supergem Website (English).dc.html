@@ -51,10 +51,6 @@
     <a href="#karnataka">Karnataka</a>
     <a href="#contact">Contact</a>
     <a href="Supergem Website (Kannada).dc.html" style="border:1.5px solid #b8912f;color:#b8912f;border-radius:999px;padding:7px 16px;font-size:14px;font-weight:600" style-hover="background:#b8912f;color:#fff">ಕನ್ನಡ</a>
-    <button onClick="{{ toggleCart }}" style="cursor:pointer;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:10px 20px;font-family:'Noto Sans Kannada',sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px" style-hover="background:#16225c">
-      <span>Cart</span>
-      <span style="background:#b8912f;color:#fff;border-radius:999px;min-width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12.5px;padding:0 6px">{{ cartCount }}</span>
-    </button>
   </nav>
 </header>
 
@@ -71,7 +67,7 @@
     <h1 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:56px;line-height:1.12;color:#fdf9ee">The gem of taste,<br>the pride of Karnataka.</h1>
     <p style="margin:0;max-width:520px;font-size:17px;line-height:1.7;color:#dfe3f2;font-family:'Noto Sans Kannada',sans-serif">Supergem, Supergem Premium and Siddu — saffron-blended pan masala crafted by Shivam Industries with zero tobacco and zero nicotine. Pure, aromatic and safe, at just ₹5 a pouch.</p>
     <div style="display:flex;gap:16px;margin-top:8px">
-      <a href="#products" style="background:#b8912f;color:#fff;border-radius:999px;padding:14px 30px;font-family:'Noto Sans Kannada',sans-serif;font-weight:600;font-size:16px" style-hover="background:#a07c22;color:#fff">Shop Now</a>
+      <a href="#products" style="background:#b8912f;color:#fff;border-radius:999px;padding:14px 30px;font-family:'Noto Sans Kannada',sans-serif;font-weight:600;font-size:16px" style-hover="background:#a07c22;color:#fff">Our Products</a>
       <a href="#farms" style="border:1.5px solid #f5e9c8;color:#f5e9c8;border-radius:999px;padding:14px 30px;font-family:'Noto Sans Kannada',sans-serif;font-weight:600;font-size:16px" style-hover="background:#f5e9c8;color:#1e2f7a">Visit the Farms</a>
     </div>
     <div style="display:flex;gap:36px;margin-top:18px">
@@ -116,15 +112,10 @@
         <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">Supergem</h3>
         <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#b8912f;font-weight:600">Saffron Blended Classic</span>
         <p style="margin:0;text-align:center;font-size:14.5px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">The everyday classic. Saffron-blended freshness with fine supari, catechu and cardamom. 0% tobacco, 0% nicotine.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:auto;border-top:1px solid #e4d9bd;padding-top:16px">
           <span style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">₹5</span>
-          <div style="display:flex;align-items:center;gap:10px">
-            <button onClick="{{ subSupergem }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:1.5px solid #1e2f7a;background:transparent;color:#1e2f7a;font-size:17px;font-weight:700" style-hover="background:#1e2f7a;color:#fff">−</button>
-            <span style="min-width:20px;text-align:center;font-weight:700;font-size:17px">{{ qtySupergem }}</span>
-            <button onClick="{{ addSupergem }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:none;background:#b8912f;color:#fff;font-size:17px;font-weight:700" style-hover="background:#a07c22">+</button>
-          </div>
+          <span style="font-size:13.5px;color:#7a7358;font-family:'Noto Sans Kannada',sans-serif">per pouch · at your nearest shop</span>
         </div>
-        <button onClick="{{ addSupergem }}" style="cursor:pointer;width:100%;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:13px;font-family:'Noto Sans Kannada',sans-serif;font-size:15px;font-weight:600" style-hover="background:#16225c">Add to Cart</button>
       </div>
 
       <!-- Supergem Premium -->
@@ -134,15 +125,10 @@
         <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">Supergem Premium</h3>
         <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#b8912f;font-weight:600">Our Richest Blend</span>
         <p style="margin:0;text-align:center;font-size:14.5px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">Extra saffron, select-grade supari and a royal gold-lattice pack. No tobacco, no nicotine added.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:auto;border-top:1px solid #e4d9bd;padding-top:16px">
           <span style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">₹5</span>
-          <div style="display:flex;align-items:center;gap:10px">
-            <button onClick="{{ subPremium }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:1.5px solid #1e2f7a;background:transparent;color:#1e2f7a;font-size:17px;font-weight:700" style-hover="background:#1e2f7a;color:#fff">−</button>
-            <span style="min-width:20px;text-align:center;font-weight:700;font-size:17px">{{ qtyPremium }}</span>
-            <button onClick="{{ addPremium }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:none;background:#b8912f;color:#fff;font-size:17px;font-weight:700" style-hover="background:#a07c22">+</button>
-          </div>
+          <span style="font-size:13.5px;color:#7a7358;font-family:'Noto Sans Kannada',sans-serif">per pouch · at your nearest shop</span>
         </div>
-        <button onClick="{{ addPremium }}" style="cursor:pointer;width:100%;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:13px;font-family:'Noto Sans Kannada',sans-serif;font-size:15px;font-weight:600" style-hover="background:#16225c">Add to Cart</button>
       </div>
 
       <!-- Siddu -->
@@ -151,15 +137,10 @@
         <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">Siddu</h3>
         <span style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#b8912f;font-weight:600">A Name of Our Own Soil</span>
         <p style="margin:0;text-align:center;font-size:14.5px;line-height:1.65;color:#4a5170;font-family:'Noto Sans Kannada',sans-serif">Bold, aromatic saffron-blended pan masala made for Karnataka's taste. 0% tobacco, 0% nicotine.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:auto;border-top:1px solid #e4d9bd;padding-top:16px">
           <span style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#1e2f7a">₹5</span>
-          <div style="display:flex;align-items:center;gap:10px">
-            <button onClick="{{ subSiddu }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:1.5px solid #1e2f7a;background:transparent;color:#1e2f7a;font-size:17px;font-weight:700" style-hover="background:#1e2f7a;color:#fff">−</button>
-            <span style="min-width:20px;text-align:center;font-weight:700;font-size:17px">{{ qtySiddu }}</span>
-            <button onClick="{{ addSiddu }}" style="cursor:pointer;width:34px;height:34px;border-radius:50%;border:none;background:#b8912f;color:#fff;font-size:17px;font-weight:700" style-hover="background:#a07c22">+</button>
-          </div>
+          <span style="font-size:13.5px;color:#7a7358;font-family:'Noto Sans Kannada',sans-serif">per pouch · at your nearest shop</span>
         </div>
-        <button onClick="{{ addSiddu }}" style="cursor:pointer;width:100%;background:#1e2f7a;color:#fff;border:none;border-radius:999px;padding:13px;font-family:'Noto Sans Kannada',sans-serif;font-size:15px;font-weight:600" style-hover="background:#16225c">Add to Cart</button>
       </div>
     </div>
   </div>
@@ -345,51 +326,12 @@
   </div>
 </footer>
 
-<!-- ══════════ CART DRAWER ══════════ -->
-<sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
-  <div style="position:fixed;inset:0;z-index:100">
-    <div onClick="{{ toggleCart }}" style="position:absolute;inset:0;background:rgba(20,31,82,0.55)"></div>
-    <div style="position:absolute;top:0;right:0;bottom:0;width:400px;max-width:90vw;background:#fdf9ee;box-shadow:-20px 0 60px rgba(0,0,0,0.3);display:flex;flex-direction:column;padding:28px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
-        <h3 style="margin:0;font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1e2f7a">Your Cart</h3>
-        <button onClick="{{ toggleCart }}" style="cursor:pointer;background:none;border:none;font-size:24px;color:#1e2f7a">✕</button>
-      </div>
-      <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
-        <p style="font-family:'Noto Sans Kannada',sans-serif;font-size:15px;color:#7a7358;line-height:1.7">Your cart is empty — add a product!</p>
-      </sc-if>
-      <div style="display:flex;flex-direction:column;gap:14px;flex:1;overflow:auto">
-        <sc-for list="{{ cartItems }}" as="item" hint-placeholder-count="0">
-          <div style="display:flex;align-items:center;gap:14px;background:#f3ecd9;border-radius:12px;padding:12px 16px">
-            <img src="{{ item.img }}" alt="{{ item.name }}" style="width:54px;border-radius:6px">
-            <div style="display:flex;flex-direction:column;flex:1">
-              <span style="font-weight:700;font-size:15px;color:#1e2f7a;font-family:'Noto Sans Kannada',sans-serif">{{ item.name }}</span>
-              <span style="font-size:13px;color:#7a7358;font-family:'Noto Sans Kannada',sans-serif">₹5 × {{ item.qty }}</span>
-            </div>
-            <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:#1e2f7a">₹{{ item.subtotal }}</span>
-          </div>
-        </sc-for>
-      </div>
-      <div style="border-top:1px solid #e4d9bd;padding-top:18px;display:flex;flex-direction:column;gap:14px">
-        <div style="display:flex;justify-content:space-between;font-family:'Noto Sans Kannada',sans-serif;font-size:16px;font-weight:700;color:#1e2340">
-          <span>Total</span>
-          <span style="font-family:'Playfair Display',serif;font-size:22px;color:#1e2f7a">₹{{ cartTotal }}</span>
-        </div>
-        <button onClick="{{ checkout }}" style="cursor:pointer;background:#b8912f;color:#fff;border:none;border-radius:999px;padding:15px;font-size:16px;font-weight:700;font-family:'Noto Sans Kannada',sans-serif" style-hover="background:#a07c22">Checkout</button>
-        <p style="margin:0;font-size:12px;color:#9a9273;text-align:center;font-family:'Noto Sans Kannada',sans-serif">{{ checkoutMsg }}</p>
-      </div>
-    </div>
-  </div>
-</sc-if>
-
 
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1e2f7a"></rect><text x="50" y="58" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="24" fill="#d9b95c">GM</text></svg></template></x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1440}, &quot;showTopStrip&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot;}, &quot;premiumHighlight&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot;}}">
 class Component extends DCLogic {
   state = {
-    cart: { supergem: 0, premium: 0, siddu: 0 },
-    cartOpen: false,
-    formName: '', formPhone: '', formCity: '', formDone: false,
-    checkoutMsg: ''
+    formName: '', formPhone: '', formCity: '', formDone: false
   };
 
   componentDidMount() {
@@ -409,41 +351,11 @@ class Component extends DCLogic {
     clearInterval(this._vidTimer);
   }
 
-  add(key, d) {
-    this.setState(s => ({ cart: { ...s.cart, [key]: Math.max(0, s.cart[key] + d) } }));
-  }
-
   renderVals() {
-    const { cart, cartOpen, formName, formPhone, formCity, formDone, checkoutMsg } = this.state;
-    const defs = [
-      { key: 'supergem', name: 'Supergem', img: 'assets/supergem.png' },
-      { key: 'premium', name: 'Supergem Premium', img: 'assets/supergem-premium.png' },
-      { key: 'siddu', name: 'Siddu', img: 'assets/siddu.png' },
-    ];
-    const cartItems = defs.filter(d => cart[d.key] > 0)
-      .map(d => ({ ...d, qty: cart[d.key], subtotal: cart[d.key] * 5 }));
-    const cartCount = cart.supergem + cart.premium + cart.siddu;
+    const { formName, formPhone, formCity, formDone } = this.state;
     return {
       showTopStrip: this.props.showTopStrip ?? true,
       premiumHighlight: this.props.premiumHighlight ?? true,
-      cartCount,
-      cartOpen,
-      cartEmpty: cartCount === 0,
-      cartItems,
-      cartTotal: cartCount * 5,
-      qtySupergem: cart.supergem, qtyPremium: cart.premium, qtySiddu: cart.siddu,
-      addSupergem: () => this.add('supergem', 1),
-      subSupergem: () => this.add('supergem', -1),
-      addPremium: () => this.add('premium', 1),
-      subPremium: () => this.add('premium', -1),
-      addSiddu: () => this.add('siddu', 1),
-      subSiddu: () => this.add('siddu', -1),
-      toggleCart: () => this.setState(s => ({ cartOpen: !s.cartOpen, checkoutMsg: '' })),
-      checkout: () => {
-        if (cartCount === 0) { this.setState({ checkoutMsg: 'Add a product first!' }); return; }
-        window.location.href = 'Supergem Checkout.dc.html?s=' + cart.supergem + '&p=' + cart.premium + '&d=' + cart.siddu;
-      },
-      checkoutMsg,
       formName, formPhone, formCity,
       formDone, formNotDone: !formDone,
       setFormName: e => this.setState({ formName: e.target.value }),
